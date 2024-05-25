@@ -19,7 +19,7 @@ header {
     text-align: center;
     color: white;
   }  
-  #founder{
+  /*#founder{
     background-color:azure;
     padding: 10px;
     width: 50%;
@@ -29,14 +29,8 @@ header {
   #founder:hover {
     background-color: rgb(95, 95, 201);
     color: aliceblue;
-  }
+  }*/
 
-  
-  .buttonAdjust p{
-    color: black;
-    font-size: 30px;
-
-  }
   ul {
     list-style-type: none;
     margin: 0;
@@ -100,3 +94,13 @@ header {
     background-color: #f9f9f9;
     padding: 5px;
   }
+  #founder:hover img {
+    content: url('https://github.com/CCUFood/CCUFood.github.io/blob/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2_2024-05-23_030330-removebg-preview.png?raw=true'); /* 當滑鼠移到按鈕上時顯示新圖片 */
+    width: 200px; /* 保持相同寬度 */
+    height: 100%; /* 保持相同高度 */
+}
+#buttonAdjust{
+  width: 30%;
+  height: 30%;
+  background-color: transparent;
+}
