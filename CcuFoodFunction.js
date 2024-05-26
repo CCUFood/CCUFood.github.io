@@ -1,3 +1,50 @@
+var test = {
+    name: "",
+    place: "",
+    URL: "",
+    IMG: "",
+    time: {
+        startTimeAm: 0,
+        endTimeAm: 0,
+        startTimePm: 0,
+        endTimePm: 0,
+        Mon: false,
+        Tue: false,
+        Wed: false,
+        Thur: false,
+        Fri: false,
+        Sat: false,
+        Sun: false,
+    },
+    address: {
+        big: false,
+        smlle: false,
+        mid: false,
+        school: false,
+        ming: false,
+    },
+    tag: {
+        rice: false,
+        noodle: false,
+        hamberger: false,
+        love: false, //滷味
+        SaltWaterChicken: false, //鹹水雞
+        curry: false, //咖哩
+        fried: false, //炸物
+        brunch: false, //早午餐
+        dumpling: false, //餃類
+        salad: false, //沙拉
+        hotpot: false, //火鍋
+        korean: false, //韓式
+        Taco: false, //塔可
+        ice: false, //冰
+        dessert: false, //甜點
+        drink: false, //飲料
+        bread: false, //麵包
+        gruel: false, //粥
+        wine: false, //酒
+    },
+};
 var foodArray = [
     {
         name: "McDonald's",
@@ -3499,10 +3546,246 @@ function clickTime() {
     if (clickTimes > 50)
         randomNumber = 9;
 }
+
+
+function tagthisRice(){
+    if(test.tag.rice==false){
+        document.getElementById("riceTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%BB%91%E9%A3%AF.png?raw=true";
+        test.tag.rice=true;
+    }
+    else{
+        document.getElementById("riceTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E7%99%BD%E9%A3%AF.png?raw=true"
+        test.tag.rice=false;
+    }
+}
+function tagthisNoodle(){
+    if(test.tag.noodle==false){
+        document.getElementById("noodleTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%BA%B5%E9%BB%91.png?raw=true";
+        test.tag.noodle=true;
+    }
+    else{
+        document.getElementById("noodleTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%BA%B5%E7%99%BD.png?raw=true"
+        test.tag.noodle=false;
+    }
+}
+function tagthisHamberger(){
+    if(test.tag.hamberger==false){
+        document.getElementById("hambergerTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%BB%91%E6%BC%A2%E5%A0%A1.png?raw=true";
+        test.tag.hamberger=true;
+    }
+    else{
+        document.getElementById("hambergerTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E7%99%BD%E6%BC%A2%E5%A0%A1.png?raw=true"
+        test.tag.hamberger=false;
+    }
+}
+function tagthisLove(){
+    if(test.tag.love==false){
+        document.getElementById("loveTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E6%BB%B7%E5%91%B3%E9%BB%91.png?raw=true";
+        test.tag.love=true;
+    }
+    else{
+        document.getElementById("loveTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E6%BB%B7%E5%91%B3%E7%99%BD.png?raw=true"
+        test.tag.love=false;
+    }
+}
+function tagthisSaltWaterChicken(){
+    if(test.tag.SaltWaterChicken==false){
+        document.getElementById("saltwaterchickenTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%B9%B9%E6%B0%B4%E9%9B%9E%E9%BB%91.png?raw=true";
+        test.tag.SaltWaterChicken=true;
+    }
+    else{
+        document.getElementById("saltwaterchickenTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%B9%B9%E6%B0%B4%E9%9B%9E%E7%99%BD.png?raw=true"
+        test.tag.SaltWaterChicken=false;
+    }
+}
+function tagthisCurry(){
+    if(test.tag.curry==false){
+        document.getElementById("curryTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%92%96%E5%93%A9%E9%BB%91.png?raw=true";
+        test.tag.curry=true;
+    }
+    else{
+        document.getElementById("curryTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%92%96%E5%93%A9%E7%99%BD.png?raw=true"
+        test.tag.curry=false;
+    }
+}
+function tagthisFried(){
+    if(test.tag.friede==false){
+        document.getElementById("friedTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E7%82%B8%E9%BB%91.png?raw=true";
+        test.tag.fried=true;
+    }
+    else{
+        document.getElementById("friedTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E7%82%B8%E7%99%BD.png?raw=true"
+        test.tag.fried=false;
+    }
+}
+function tagthisBrunch(){
+    if(test.tag.brunch==false){
+        document.getElementById("brunchTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E6%97%A9%E5%8D%88%E9%A4%90%E9%BB%91.png?raw=true";
+        test.tag.brunch=true;
+    }
+    else{
+        document.getElementById("brunchTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E6%97%A9%E5%8D%88%E9%A4%90%E7%99%BD.png?raw=true"
+        test.tag.brunch=false;
+    }
+}
+function tagthisDumpling(){
+    if(test.tag.dumpling==false){
+        document.getElementById("dumplingTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%A4%83%E9%BB%91.png?raw=true";
+        test.tag.dumpling=true;
+    }
+    else{
+        document.getElementById("dumplingTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%A4%83%E7%99%BD.png?raw=true"
+        test.tag.dumpling=false;
+    }
+}
+function tagthisSaild(){
+    if(test.tag.salad==false){
+        document.getElementById("saildTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E6%B2%99%E6%8B%89%E9%BB%91.png?raw=true";
+        test.tag.salad=true;
+    }
+    else{
+        document.getElementById("saildTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E6%B2%99%E6%8B%89%E7%99%BD.png?raw=true"
+        test.tag.salad=false;
+    }
+}
+function tagthisHotpot(){
+    if(test.tag.hotpote==false){
+        document.getElementById("hotpotTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E7%81%AB%E9%8D%8B%E9%BB%91.png?raw=true";
+        test.tag.hotpot=true;
+    }
+    else{
+        document.getElementById("hotpotTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E7%81%AB%E9%8D%8B%E7%99%BD.png?raw=true"
+        test.tag.hotpot=false;
+    }
+}
+function tagthisKorean(){
+    if(test.tag.korean==false){
+        document.getElementById("koreanTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%9F%93%E5%BC%8F%E9%BB%91.png?raw=true";
+        test.tag.korean=true;
+    }
+    else{
+        document.getElementById("koreanTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%9F%93%E5%BC%8F%E7%99%BD.png?raw=true"
+        test.tag.korean=false;
+    }
+}
+function tagthisTaco(){
+    if(test.tag.Taco==false){
+        document.getElementById("tacoTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%A1%94%E5%8F%AF%E9%BB%91.png?raw=true";
+        test.tag.Taco=true;
+    }
+    else{
+        document.getElementById("tacoTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%A1%94%E5%8F%AF%E7%99%BD.png?raw=true"
+        test.tag.Taco=false;
+    }
+}
+function tagthisIce(){
+    if(test.tag.ice==false){
+        document.getElementById("iceTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%86%B0%E9%BB%91.png?raw=true";
+        test.tag.ice=true;
+    }
+    else{
+        document.getElementById("iceTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%86%B0%E7%99%BD.png?raw=true"
+        test.tag.ice=false;
+    }
+}
+function tagthisDessert(){
+    if(test.tag.dessert==false){
+        document.getElementById("dessertTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E7%94%9C%E9%BB%9E%E9%BB%91.png?raw=true";
+        test.tag.dessert=true;
+    }
+    else{
+        document.getElementById("dessertTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E7%94%9C%E9%BB%9E%E7%99%BD.png?raw=true"
+        test.tag.dessert=false;
+    }
+}
+function tagthisDrink(){
+    if(test.tag.drink==false){
+        document.getElementById("drinkTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%A3%B2%E6%96%99%E9%BB%91.png?raw=true";
+        test.tag.drink=true;
+    }
+    else{
+        document.getElementById("drinkTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%A3%B2%E6%96%99%E7%99%BD.png?raw=true"
+        test.tag.drink=false;
+    }
+}
+function tagthisBread(){
+    if(test.tag.bread==false){
+        document.getElementById("breadTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%BA%B5%E5%8C%85%E9%BB%91.png?raw=true";
+        test.tag.bread=true;
+    }
+    else{
+        document.getElementById("breadTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%BA%B5%E5%8C%85%E7%99%BD.png?raw=true"
+        test.tag.bread=false;
+    }
+}
+function tagthisGruel(){
+    if(test.tag.gruel==false){
+        document.getElementById("gruelTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E7%B2%A5%E9%BB%91.png?raw=true";
+        test.tag.gruel=true;
+    }
+    else{
+        document.getElementById("gruelTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E7%B2%A5%E7%99%BD.png?raw=true"
+        test.tag.gruel=false;
+    }
+}
+function tagthisWine(){
+    if(test.tag.wine==false){
+        document.getElementById("wineTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%85%92%E9%BB%91.png?raw=true";
+        test.tag.wine=true;
+    }
+    else{
+        document.getElementById("wineTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E9%85%92%E7%99%BD.png?raw=true"
+        test.tag.wine=false;
+    }
+}
+var clickTimes = 0; // 記錄點擊次數
 function Duckthis() {
-    randomNumber = Math.floor(Math.random() * 75);
+    var count = Math.floor(Math.random() * 50) + 1; // 隨機生成1到50之間的數字
+    
+    var counter = 0; // 計數器，用來遍歷食物陣列
+    var foundMatch = false; // 標記是否找到匹配項
+    
     clickTimes++;
-    document.getElementById("food").innerHTML = foodArray[randomNumber].name;
-    document.getElementById("Foodimg").src = foodArray[randomNumber].URL;
+
+    while (!foundMatch) {
+        var foodTags = foodArray[counter].tag; // 當前食物的標籤
+        var testTags = test.tag; // 測試標籤
+
+        // 檢查食物是否符合任何一個標籤
+        if ((testTags.rice && foodTags.rice) ||
+            (testTags.noodle && foodTags.noodle) ||
+            (testTags.hamburger && foodTags.hamburger) ||
+            (testTags.SaltWaterChicken && foodTags.SaltWaterChicken) ||
+            (testTags.curry && foodTags.curry) ||
+            (testTags.fried && foodTags.fried) ||
+            (testTags.brunch && foodTags.brunch) ||
+            (testTags.dumpling && foodTags.dumpling) ||
+            (testTags.salad && foodTags.salad) ||
+            (testTags.hotpot && foodTags.hotpot) ||
+            (testTags.korean && foodTags.korean) ||
+            (testTags.Taco && foodTags.Taco) ||
+            (testTags.ice && foodTags.ice) ||
+            (testTags.dessert && foodTags.dessert) ||
+            (testTags.drink && foodTags.drink) ||
+            (testTags.bread && foodTags.bread) ||
+            (testTags.gruel && foodTags.gruel) ||
+            (testTags.wine && foodTags.wine)) {
+            count--;
+        }
+
+        if (count == 0) {
+            // 更新網頁上的食物名稱和圖片
+            document.getElementById("food").innerHTML = foodArray[counter].name;
+            document.getElementById("Foodimg").src = foodArray[counter].URL;
+        
+            foundMatch = true;
+        } else {
+            counter++;
+            if (counter == foodArray.length) {
+                counter = 0;
+            }
+        }
+    }
+
     document.getElementById("clicks").innerHTML = clickTimes;
 }
