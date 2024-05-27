@@ -3738,21 +3738,136 @@ function tagthisWine(){
         test.tag.wine=false;
     }
 }
+function tagthisBig(){
+    if(test.address.big==false){
+        document.getElementById("bigTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%A4%A7%E5%90%83%E9%BB%91.png?raw=true";
+        test.address.big=true;
+    }
+    else{
+        document.getElementById("bigTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%A4%A7%E5%90%83%E7%99%BD.png?raw=true"
+        test.address.big=false;
+    }
+}
+function tagthisMid(){
+    if(test.address.mid==false){
+        document.getElementById("midTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E4%B8%AD%E5%90%83%E9%BB%91.png?raw=true";
+        test.address.mid=true;
+    }
+    else{
+        document.getElementById("midTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E4%B8%AD%E5%90%83%E7%99%BD.png?raw=true"
+        test.address.mid=false;
+    }
+}
+function tagthisSmall(){
+    if(test.address.smlle==false){
+        document.getElementById("smallTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%B0%8F%E5%90%83%E9%BB%91.png?raw=true";
+        test.address.smlle=true;
+    }
+    else{
+        document.getElementById("smallTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%B0%8F%E5%90%83%E7%99%BD.png?raw=true"
+        test.address.smlle=false;
+    }
+}
+function tagthisMing(){
+    if(test.address.ming==false){
+        document.getElementById("mingTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E6%B0%91%E9%9B%84%E9%BB%91.png?raw=true";
+        test.address.ming=true;
+    }
+    else{
+        document.getElementById("mingTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E6%B0%91%E9%9B%84%E7%99%BE.png?raw=true"
+        test.address.ming=false;
+    }
+}
+function tagthisSchool(){
+    if(test.address.school==false){
+        document.getElementById("schoolTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E6%B0%91%E9%9B%84%E9%BB%91.png?raw=true";
+        test.address.school=true;
+    }
+    else{
+        document.getElementById("schoolTag").src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%AD%B8%E9%A4%90%E7%99%BD.png?raw=true"
+        test.address.school=false;
+    }
+}
+function toggleInput() {
+    const checkbox = document.getElementById("enableTimeInput");
+    const input = document.getElementById("timeInput");
+    input.disabled = !checkbox.checked;
+}
+
+function isValidTimeFormat(time) {
+    return /^([01][0-9]|2[0-3])[0-5][0-9]$/.test(time);
+}
+
+function isTimeInRange(currentTime, startTimeAm, endTimeAm, startTimePm, endTimePm) {
+    currentTime = parseInt(currentTime);
+    startTimeAm = parseInt(startTimeAm);
+    endTimeAm = parseInt(endTimeAm);
+    startTimePm = parseInt(startTimePm);
+    endTimePm = parseInt(endTimePm);
+
+    // 檢查上午時間段
+    if (startTimeAm <= endTimeAm) {
+        if (currentTime >= startTimeAm && currentTime <= endTimeAm) {
+            return true;
+        }
+    } else {
+        if (currentTime >= startTimeAm || currentTime <= endTimeAm) {
+            return true;
+        }
+    }
+
+    // 檢查下午時間段
+    if (startTimePm <= endTimePm) {
+        if (currentTime >= startTimePm && currentTime <= endTimePm) {
+            return true;
+        }
+    } else {
+        if (currentTime >= startTimePm || currentTime <= endTimePm) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 var clickTimes = 0; // 記錄點擊次數
 function Duckthis() {
+    const checkbox = document.getElementById("enableTimeInput");
+    const input = document.getElementById("timeInput").value;
+    var currentTime = 0;
+
+    if (checkbox.checked) {
+        if (!isValidTimeFormat(input)) {
+            alert("並非正確的時間形式");
+            return;
+        }
+        currentTime = parseInt(input);
+    }
+
     var count = Math.floor(Math.random() * 50) + 1; // 隨機生成1到50之間的數字
-    
+    var times = 0;
     var counter = 0; // 計數器，用來遍歷食物陣列
     var foundMatch = false; // 標記是否找到匹配項
-    
+
     clickTimes++;
 
     while (!foundMatch) {
         var foodTags = foodArray[counter].tag; // 當前食物的標籤
         var testTags = test.tag; // 測試標籤
+        var addressTags = foodArray[counter].address;
+        var testaddressTags = test.address;
+        var startTimeAm = foodArray[counter].time.startTimeAm;
+        var endTimeAm = foodArray[counter].time.endTimeAm;
+        var startTimePm = foodArray[counter].time.startTimePm;
+        var endTimePm = foodArray[counter].time.endTimePm;
+
+        // 檢查是否所有標籤都為 false
+        var allFalseTags = !Object.values(testTags).some(tag => tag);
+        var allFalsePlace = !Object.values(testaddressTags).some(tag => tag);
 
         // 檢查食物是否符合任何一個標籤
-        if ((testTags.rice && foodTags.rice) ||
+        if (allFalseTags || 
+            (testTags.rice && foodTags.rice) ||
             (testTags.noodle && foodTags.noodle) ||
             (testTags.hamburger && foodTags.hamburger) ||
             (testTags.SaltWaterChicken && foodTags.SaltWaterChicken) ||
@@ -3770,18 +3885,38 @@ function Duckthis() {
             (testTags.bread && foodTags.bread) ||
             (testTags.gruel && foodTags.gruel) ||
             (testTags.wine && foodTags.wine)) {
-            count--;
+            if (allFalsePlace || 
+                (testaddressTags.big && addressTags.big) ||
+                (testaddressTags.mid && addressTags.mid) ||
+                (testaddressTags.small && addressTags.small) ||
+                (testaddressTags.school && addressTags.school) ||
+                (testaddressTags.ming && addressTags.ming)) {
+
+                if (!checkbox.checked) {
+                    count--;
+                    times++;
+                } else {
+                    if (isTimeInRange(currentTime, startTimeAm, endTimeAm, startTimePm, endTimePm)) {
+                        count--;
+                        times++;
+                    }
+                }
+            }
         }
 
         if (count == 0) {
             // 更新網頁上的食物名稱和圖片
             document.getElementById("food").innerHTML = foodArray[counter].name;
             document.getElementById("Foodimg").src = foodArray[counter].URL;
-        
+
             foundMatch = true;
         } else {
             counter++;
             if (counter == foodArray.length) {
+                if (times == 0) {
+                    alert("不存在符合條件的餐廳");
+                    break;
+                }
                 counter = 0;
             }
         }
@@ -3789,3 +3924,4 @@ function Duckthis() {
 
     document.getElementById("clicks").innerHTML = clickTimes;
 }
+
