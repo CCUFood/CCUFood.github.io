@@ -30,19 +30,11 @@
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Tags</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <form class="row g-3" style="margin-left: 20px;">
-            <div class="col-auto">
-                <label class="visually-hidden">時間</label>
-                <span class="form-control-plaintext">時間</span>
-            </div>
-            <div class="col-auto">
-                <label for="inputPassword2" class="visually-hidden">Time</label>
-                <input type="password" class="form-control" id="inputPassword2" placeholder="Hours:minutes">
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-3">確認</button>
-            </div>
-        </form>
+          <div class="time-input-container">
+            <input type="checkbox" id="enableTimeInput" onclick="toggleInput()">
+            <label for="enableTimeInput">啟用時間輸入:</label>
+            <input type="text" id="timeInput" disabled placeholder="輸入時間 (例: 0530, 1630)">
+        </div>
         
           
           
@@ -125,21 +117,22 @@
                   地點
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                  <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btncheck1">大吃</label>
-                  
-                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btncheck2">中吃</label>
-                  
-                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btncheck3">小吃</label>
-
-                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btncheck3">學餐</label>
-
-                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btncheck3">民雄</label>
+                  <div>
+                    <button id="found"; onclick="tagthisBig()">
+                      <img id="bigTag" src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%A4%A7%E5%90%83%E7%99%BD.png?raw=true" alt="大吃" style="width: 75px;height: 75px;">
+                    </button>
+                    <button class="found "; onclick="tagthisMid()">
+                      <img id="midTag" src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E4%B8%AD%E5%90%83%E7%99%BD.png?raw=true" alt="中吃" style="width: 75px;height: 75px;">
+                    </button>
+                    <button class="found "; onclick="tagthisSmall()">
+                      <img id="smallTag" src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%B0%8F%E5%90%83%E7%99%BD.png?raw=true" alt="小吃" style="width: 75px;height: 75px;">
+                    </button>
+                    <button class="found "; onclick="tagthisMing()">
+                      <img id="mingTag" src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E6%B0%91%E9%9B%84%E7%99%BE.png?raw=true" alt="民雄" style="width: 75px;height: 75px;">
+                    </button>
+                    <button id="found"; onclick="tagthisSchool()">
+                      <img id="schoolTag" src="https://github.com/CCUFood/CCUFood.github.io/blob/main/%E5%AD%B8%E9%A4%90%E7%99%BD.png?raw=true" alt="學餐" style="width: 75px;height: 75px;">
+                    </button>
                   </div>  
               </ul>
               </li>
