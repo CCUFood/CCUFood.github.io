@@ -3909,7 +3909,7 @@ function Duckthis() {
             // 更新網頁上的食物名稱和圖片
             document.getElementById("food").innerHTML = foodArray[counter].name;
             document.getElementById("Foodimg").src = foodArray[counter].IMG;
-
+            document.getElementById("foodurl").href = foodArray[counter].URL;
             foundMatch = true;
         } else {
             counter++;
