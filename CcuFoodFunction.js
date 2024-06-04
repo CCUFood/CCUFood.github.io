@@ -1580,7 +1580,7 @@ var foodArray = [
             noodle: true,
             hamberger: false,
             love: false, //滷味
-            SaltWaterChicken: true, //鹹水雞
+            SaltWaterChicken: false, //鹹水雞
             curry: false, //咖哩
             fried: false, //炸物
             brunch: false, //早午餐
@@ -2379,7 +2379,7 @@ var foodArray = [
             noodle: true,
             hamberger: false,
             love: false, //滷味
-            SaltWaterChicken: true, //鹹水雞
+            SaltWaterChicken: false, //鹹水雞
             curry: false, //咖哩
             fried: false, //炸物
             brunch: false, //早午餐
@@ -2473,7 +2473,7 @@ var foodArray = [
             noodle: true,
             hamberger: false,
             love: false, //滷味
-            SaltWaterChicken: true, //鹹水雞
+            SaltWaterChicken: false, //鹹水雞
             curry: false, //咖哩
             fried: false, //炸物
             brunch: false, //早午餐
