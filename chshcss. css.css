@@ -29,7 +29,7 @@ header img {
 }
 
 body {
-  background-color: #EBC04D; /* 改為淺灰色，提升可讀性 */
+  background-color: #000000; /* 浅橙色 */
 }
 
 footer {
@@ -100,7 +100,30 @@ footer {
     display: block;
     text-align: left;
   }
-  
+  .shop {
+    text-align: center;
+    margin: 20px; /* 外邊距，讓整個區塊與網頁邊緣保持距離 */
+}
+.background-container {
+    background-image: url('https://github.com/CCUFood/CCUFoodIMG/blob/main/%E7%89%86%E5%A3%81.jpg?raw=true');
+    background-size: cover;
+    padding: 20px; /* 內邊距，創建相框效果 */
+    margin: 0 auto; /* 使背景容器居中 */
+    display: inline-block; /* 使背景容器適應內容寬度 */
+    box-sizing: border-box; /* 包括內邊距在內計算寬度 */
+}
+#Foodimg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+#food, #address {
+    margin-top: 10px; /* 讓文字與圖片之間保持距離 */
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
   .dropdown-content a:hover {background-color: #f1f1f1;}
   
   .dropdown:hover .dropdown-content {
